@@ -1,0 +1,55 @@
+# Stack JITA untuk Coolify: MySQL + Backend (Express) + Frontend (nginx)
+# Deploy: Coolify -> New Resource -> Docker Compose -> pilih repo ini -> isi env -> Deploy
+services:
+  mysql:
+    image: mysql:8.0
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?Set MYSQL_ROOT_PASSWORD di Coolify}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-jitadb}
+      MYSQL_USER: ${MYSQL_USER:-jita}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:?Set MYSQL_PASSWORD di Coolify}
+    volumes:
+      - mysql-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-p$$MYSQL_ROOT_PASSWORD"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 30s
+
+  backend:
+    build:
+      context: ./jita-backend
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      DB_HOST: mysql
+      DB_USER: ${MYSQL_USER:-jita}
+      DB_PASSWORD: ${MYSQL_PASSWORD:?Set MYSQL_PASSWORD di Coolify}
+      DB_NAME: ${MYSQL_DATABASE:-jitadb}
+      SESSION_SECRET: ${SESSION_SECRET:?Set SESSION_SECRET di Coolify}
+      COOKIE_SECURE: ${COOKIE_SECURE:-}
+      LOG_HTTP: ${LOG_HTTP:-false}
+      # Ganti dengan domain Coolify kamu (dipakai CORS jika API dipanggil lintas origin)
+      ALLOWED_ORIGINS: ${ALLOWED_ORIGINS:-https://jita.example.com}
+    volumes:
+      - backend-uploads:/app/uploads
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        VITE_BASE_PATH: ${VITE_BASE_PATH:-/}
+    restart: unless-stopped
+    depends_on:
+      - backend
+
+volumes:
+  mysql-data:
+  backend-uploads:

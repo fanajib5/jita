@@ -1,0 +1,290 @@
+/* =============================================
+   CorporateJobsPage.module.css
+   JITA V2 — Corporate Job Management
+   Consistent with Corporate HR Portal
+   ============================================= */
+
+@import '../../styles/variables.css';
+
+.page {
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  padding: var(--space-8) 0 var(--space-16);
+  animation: fadeIn 0.35s ease-out both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+/* ── Page Header ───────────────────────────────────────────────────────────── */
+
+.pageHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: var(--space-6) var(--space-8);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-top: 3px solid var(--color-role-corporate);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  gap: var(--space-6);
+  flex-wrap: wrap;
+}
+
+.headerLeft {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.headerTitleRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.pageTitle {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.kanjiBadge {
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  color: var(--color-role-corporate);
+  background: rgba(142, 68, 173, 0.15);
+  border: 1px solid rgba(142, 68, 173, 0.3);
+  padding: 2px var(--space-3);
+  border-radius: var(--radius-full);
+}
+
+.pageSubtitle {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.headerLink {
+  text-decoration: none;
+  display: inline-flex;
+}
+
+/* ── Feedback Banners ──────────────────────────────────────────────────────── */
+
+.alertBanner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  line-height: 1.4;
+}
+
+.alertSuccess {
+  background: rgba(39, 174, 96, 0.12);
+  border: 1px solid rgba(39, 174, 96, 0.35);
+  color: #2ecc71;
+}
+
+.alertError {
+  background: rgba(231, 76, 60, 0.12);
+  border: 1px solid rgba(231, 76, 60, 0.35);
+  color: #e74c3c;
+}
+
+/* ── Form Styling ──────────────────────────────────────────────────────────── */
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+@media (max-width: 768px) {
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.full {
+  grid-column: 1 / -1;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.field label {
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.input,
+.select,
+.textarea {
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  font-family: var(--font-primary);
+  font-size: var(--text-sm);
+  padding: var(--space-2) var(--space-3);
+  outline: none;
+  transition: border-color var(--transition);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+  border-color: var(--color-role-corporate);
+  box-shadow: 0 0 0 2px rgba(142, 68, 173, 0.15);
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: var(--color-text-tertiary);
+}
+
+.select option {
+  background: var(--color-surface-2);
+}
+
+.textarea {
+  resize: vertical;
+  line-height: var(--leading-normal);
+}
+
+.companyRow {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.newCompanyBox {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 1.5fr auto;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+  padding: var(--space-3);
+  background: var(--color-surface-2);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .newCompanyBox {
+    grid-template-columns: 1fr;
+  }
+}
+
+.formActions {
+  margin-top: var(--space-5);
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* ── Table Styling ─────────────────────────────────────────────────────────── */
+
+.tableWrapper {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+  text-align: left;
+}
+
+.table thead {
+  background: var(--color-surface-2);
+}
+
+.table th {
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.table td {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-border-soft);
+  color: var(--color-text-primary);
+  vertical-align: middle;
+}
+
+.table tbody tr:hover {
+  background: rgba(142, 68, 173, 0.04);
+}
+
+.jobTitle {
+  font-weight: var(--font-semibold);
+  color: var(--color-text-primary);
+}
+
+.jobTitleJp {
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  margin-top: 2px;
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-12) var(--space-4);
+  text-align: center;
+  color: var(--color-text-secondary);
+  gap: var(--space-2);
+}
+
+.emptyIcon {
+  font-size: 2.5rem;
+}

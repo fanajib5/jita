@@ -1,0 +1,7 @@
+node_modules
+uploads
+scripts
+*.test.mjs
+vitest.config.mjs
+tsconfig.json
+npm-debug.log*

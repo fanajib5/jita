@@ -1,0 +1,11 @@
+.root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  margin-top: var(--navbar-height);
+  flex: 1;
+  min-height: calc(100vh - var(--navbar-height));
+}

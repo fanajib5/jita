@@ -1,0 +1,11 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "ignorePatterns": [
+    "jita-backend/**"
+  ],
+  "rules": {
+    "react/only-export-components": "off",
+    "react/set-state-in-effect": "off",
+    "react/incompatible-library": "off"
+  }
+}

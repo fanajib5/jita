@@ -1,0 +1,9 @@
+node_modules/
+uploads/*
+!uploads/.gitkeep
+!uploads/ktp/.gitkeep
+!uploads/cert/.gitkeep
+!uploads/portfolio/.gitkeep
+.env
+.env.local
+.env.production

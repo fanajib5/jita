@@ -1,0 +1,129 @@
+/* =============================================
+   PendingDocsTable.module.css
+   JITA V2 — Table styling for Admin Verification
+   ============================================= */
+
+@import '../../styles/variables.css';
+
+.tableWrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: var(--text-sm);
+}
+
+.thead {
+  background: var(--color-surface-2);
+  border-bottom: 2px solid var(--color-border);
+}
+
+.th {
+  padding: var(--space-3) var(--space-4);
+  font-weight: var(--font-semibold);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+.tr {
+  border-bottom: 1px solid var(--color-border);
+  transition: background-color var(--transition-fast);
+}
+
+.tr:hover {
+  background-color: var(--color-surface-2);
+}
+
+.td {
+  padding: var(--space-3) var(--space-4);
+  vertical-align: middle;
+}
+
+.userName {
+  font-weight: var(--font-semibold);
+  color: var(--color-text-primary);
+}
+
+.userEmail {
+  font-size: var(--text-xs);
+  color: var(--color-text-tertiary);
+  margin-top: 2px;
+}
+
+.docTitle {
+  font-weight: var(--font-medium);
+  color: var(--color-text-primary);
+}
+
+.docType {
+  font-size: var(--text-xs);
+  color: var(--color-text-tertiary);
+  font-family: var(--font-mono);
+  margin-top: 2px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.viewLink {
+  text-decoration: none;
+  display: inline-flex;
+}
+
+/* ── Pagination ────────────────────────────────────────────────────────────── */
+
+.paginationBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-4) var(--space-2);
+  border-top: 1px solid var(--color-border);
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.paginationInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+}
+
+.pageSizeSelect {
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-2);
+  color: var(--color-text-primary);
+  font-size: var(--text-xs);
+  cursor: pointer;
+  outline: none;
+}
+
+.pageSizeSelect:focus {
+  border-color: var(--color-primary);
+}
+
+.paginationControls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.pageIndicator {
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-medium);
+  margin: 0 var(--space-2);
+}

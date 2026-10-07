@@ -1,0 +1,11 @@
+node_modules
+dist
+jita-backend
+e2e
+documents
+docs
+.serena
+.git
+playwright.config.ts
+*.log
+.env*

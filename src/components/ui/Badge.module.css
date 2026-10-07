@@ -1,0 +1,81 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-weight: var(--font-medium);
+  border-radius: var(--radius-full);
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.sm {
+  font-size: 0.625rem;
+  padding: 0.15rem 0.5rem;
+}
+.md {
+  font-size: var(--text-xs);
+  padding: 0.2rem 0.625rem;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+.default {
+  background: var(--color-surface-3);
+  color: var(--color-text-secondary);
+  border-color: var(--color-border);
+}
+.success {
+  background: var(--color-success-soft);
+  color: var(--color-success);
+  border-color: var(--color-success);
+}
+.warning {
+  background: var(--color-warning-soft);
+  color: var(--color-warning);
+  border-color: var(--color-warning);
+}
+.danger {
+  background: var(--color-error-soft);
+  color: var(--color-error);
+  border-color: var(--color-error);
+}
+.info {
+  background: var(--color-info-soft);
+  color: var(--color-info);
+  border-color: var(--color-info);
+}
+.accent {
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+.sakura {
+  background: var(--color-sakura-soft);
+  color: var(--color-sakura);
+  border-color: var(--color-sakura);
+}
+.student {
+  background: rgba(52, 152, 219, 0.15);
+  color: var(--color-role-student);
+  border-color: var(--color-role-student);
+}
+.corporate {
+  background: rgba(142, 68, 173, 0.15);
+  color: var(--color-role-corporate);
+  border-color: var(--color-role-corporate);
+}
+.educator {
+  background: rgba(22, 160, 133, 0.15);
+  color: var(--color-role-educator);
+  border-color: var(--color-role-educator);
+}
+.silver {
+  background: rgba(212, 172, 13, 0.15);
+  color: var(--color-role-silver);
+  border-color: var(--color-role-silver);
+}

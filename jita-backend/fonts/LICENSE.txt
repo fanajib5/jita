@@ -1,0 +1,4 @@
+Noto Sans CJK JP — SIL Open Font License 1.1
+Copyright 2014-2021 Adobe Inc. (http://www.adobe.com/), with Reserved Font Name 'Source'.
+Source: https://github.com/notofonts/noto-cjk
+Full license: https://scripts.sil.org/OFL

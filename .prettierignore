@@ -1,0 +1,37 @@
+# Dependencies
+node_modules
+
+# Build outputs
+dist
+build
+.output
+.vite
+.vite-temp
+
+# Test coverage
+coverage
+
+# Cache
+.cache
+.temp
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+*.tsbuildinfo
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.idea
+.vscode
+*.swp
+*.swo
+
+# Lock files (opsional, biasanya tidak diformat)
+# package-lock.json
+# pnpm-lock.yaml
